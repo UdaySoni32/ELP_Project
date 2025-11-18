@@ -17,6 +17,31 @@
     .company-card h3 { color: #166534; margin-top: 0; }
     .buy-button { display: inline-block; background: #16a34a; color: #fff; padding: 0.8em 1.5em; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 1em; transition: background-color 0.3s; }
     .buy-button:hover { background: #15803d; }
+    .calculator-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.5em;
+    }
+    .calculator-container label {
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+    #meat-meals {
+      width: 80%;
+    }
+    #impact-results {
+      margin-top: 1.5em;
+      text-align: center;
+    }
+    #impact-results p {
+      margin: 0.5em 0;
+      font-size: 1.1em;
+    }
+    #impact-results .savings {
+      color: #16a34a;
+      font-weight: bold;
+    }
     .faq-item { margin-bottom: 1em; }
     .faq-question { font-weight: bold; cursor: pointer; background: #dcfce7; padding: 1em; border-radius: 8px; }
     .faq-answer { display: none; margin-top: 0.5em; padding: 1em; background: #f0fdf4; border-left: 4px solid #16a34a; }
@@ -32,6 +57,7 @@
     <a href="ELP_WEBSITE_1.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="help.html">Help</a>
+    <a href="buy_in_india.html">Buy in India</a>
   </nav>
   <main>
     <section id="problem">
@@ -43,39 +69,43 @@
       <p>By shifting our food system towards alternative proteins, we can significantly reduce the environmental impact of our diets. Lab-grown, plant-based, and other artificial meats offer a way to enjoy the taste and texture of meat without the devastating consequences for biodiversity.</p>
     </section>
     <section id="innovators">
-      <h2>Shop for a Better Planet</h2>
-      <p>Here are some of the companies leading the charge in the alternative meat revolution. Click on a button to visit their store and make a purchase.</p>
+      <h2>Meet the Innovators</h2>
+      <p>Here are some of the companies leading the charge in the alternative meat revolution. Click on a card to visit their website and learn more.</p>
       <div class="company-grid">
         <div class="company-card">
-          <h3>Upside Foods</h3>
-          <p>Pioneers in cultured chicken and beef. Not yet available in stores, but check their site for updates.</p>
-          <a href="https://www.upsidefoods.com/" class="buy-button" target="_blank">Visit Site</a>
+          <a href="https://www.upsidefoods.com/" target="_blank">Upside Foods</a>
+          <p>Pioneers in cultured chicken and beef.</p>
         </div>
         <div class="company-card">
-          <h3>Beyond Meat</h3>
-          <p>A leader in plant-based meat products available in most grocery stores.</p>
-          <a href="https://www.beyondmeat.com/en-US/where-to-buy" class="buy-button" target="_blank">Buy Now</a>
+          <a href="https://www.beyondmeat.com/" target="_blank">Beyond Meat</a>
+          <p>A leader in plant-based meat products.</p>
         </div>
         <div class="company-card">
-          <h3>Impossible Foods</h3>
-          <p>Famous for its "bleeding" plant-based burger. Find it in a store near you.</p>
-          <a href="https://impossiblefoods.com/where-to-buy" class="buy-button" target="_blank">Buy Now</a>
+          <a href="https://impossiblefoods.com/" target="_blank">Impossible Foods</a>
+          <p>Famous for its "bleeding" plant-based burger.</p>
         </div>
         <div class="company-card">
-          <h3>GOOD Meat</h3>
-          <p>A division of Eat Just, focused on cultured meat. Available in select restaurants.</p>
-          <a href="https://www.goodmeat.co/eat" class="buy-button" target="_blank">Find a Restaurant</a>
+          <a href="https://www.goodmeat.co/" target="_blank">GOOD Meat</a>
+          <p>A division of Eat Just, focused on cultured meat.</p>
         </div>
         <div class="company-card">
-          <h3>Mosa Meat</h3>
-          <p>Creators of the world's first cultured beef burger. Not yet commercially available.</p>
-          <a href="https://www.mosameat.com/" class="buy-button" target="_blank">Visit Site</a>
+          <a href="https://www.mosameat.com/" target="_blank">Mosa Meat</a>
+          <p>Creators of the world's first cultured beef burger.</p>
         </div>
         <div class="company-card">
-          <h3>Quorn</h3>
-          <p>Uses mycoprotein to create meat-free products. Widely available in supermarkets.</p>
-          <a href="https://www.quorn.us/products" class="buy-button" target="_blank">Buy Now</a>
+          <a href="https://www.quorn.us/" target="_blank">Quorn</a>
+          <p>Uses mycoprotein to create meat-free products.</p>
         </div>
+      </div>
+    </section>
+    <section id="calculator">
+      <h2>Environmental Impact Calculator</h2>
+      <p>See the impact of your diet and how much you can save by switching to plant-based meals.</p>
+      <div class="calculator-container">
+        <label for="meat-meals">How many meat-based meals do you eat per week?</label>
+        <input type="range" id="meat-meals" name="meat-meals" min="0" max="21" value="7">
+        <span id="meat-meals-value">7</span>
+        <div id="impact-results"></div>
       </div>
     </section>
     <section id="faq">
@@ -107,6 +137,39 @@
           answer.style.display = "block";
         }
       });
+    });
+
+    const meatMealsSlider = document.getElementById('meat-meals');
+    const meatMealsValue = document.getElementById('meat-meals-value');
+    const impactResults = document.getElementById('impact-results');
+
+    const calculateImpact = (meals) => {
+      const landUse = (meals * 10).toFixed(1); // in square meters
+      const waterUse = (meals * 100).toFixed(1); // in liters
+      const co2Emissions = (meals * 5).toFixed(1); // in kg
+
+      const savings = {
+        land: (landUse * 0.9).toFixed(1),
+        water: (waterUse * 0.8).toFixed(1),
+        co2: (co2Emissions * 0.7).toFixed(1)
+      };
+
+      impactResults.innerHTML = `
+        <p>Your estimated weekly impact:</p>
+        <p><strong>Land Use:</strong> ${landUse} m²</p>
+        <p><strong>Water Use:</strong> ${waterUse} L</p>
+        <p><strong>CO2 Emissions:</strong> ${co2Emissions} kg</p>
+        <p class="savings">By switching to plant-based, you could save:</p>
+        <p class="savings"><strong>Land:</strong> ${savings.land} m² | <strong>Water:</strong> ${savings.water} L | <strong>CO2:</strong> ${savings.co2} kg</p>
+      `;
+    };
+
+    calculateImpact(meatMealsSlider.value);
+
+    meatMealsSlider.addEventListener('input', (event) => {
+      const meals = event.target.value;
+      meatMealsValue.textContent = meals;
+      calculateImpact(meals);
     });
   </script>
 </body>
