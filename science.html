@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Science - A New Way to Eat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html">A New Way to Eat</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="science.html" class="active">The Science</a>
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help</a>
+      <a href="buy_in_india.html">Buy in India</a>
+    </div>
+  </nav>
+
+  <header class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1614935151651-0bea55ce2a5f?auto=format&fit=crop&w=1740&q=80'); padding: 8em 2em;">
+    <h1>The Science of a Better Tomorrow</h1>
+    <p>Exploring the technology that makes sustainable meat a reality.</p>
+  </header>
+
+  <main class="container">
+    <section id="what">
+      <h2>What is Cultured Meat?</h2>
+      <p class="section-intro">
+        Cultured meat is genuine animal meat produced by cultivating animal cells directly. This process allows for the creation of meat in a clean, controlled environment, offering a sustainable and ethical alternative to traditional livestock farming. The first cultured burger was created in 2013, and the technology has advanced rapidly since.
+      </p>
+    </section>
+    
+    <section id="how" style="background: var(--white); padding: 4em 2em; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        <h2>How It's Made</h2>
+        <div class="grid-2-col">
+            <div>
+                <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=800&q=60" alt="A clean, modern laboratory environment with a scientist.">
+            </div>
+            <div>
+              <ol>
+                <li><b>Harmless Cell Sampling:</b> A small sample of cells is taken from a living animal, without causing harm.</li>
+                <li><b>Nutrient-Rich Growth:</b> The cells are placed in a bioreactor and fed a rich broth of nutrients to encourage them to multiply and grow.</li>
+                <li><b>Tissue Formation:</b> The cells differentiate into muscle, fat, and connective tissue, forming the basis of the meat.</li>
+                <li><b>Final Assembly:</b> The harvested tissues are assembled into the final product, whether it's a burger, nugget, or fillet.</li>
+              </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+      <h2>Benefits & Comparison</h2>
+      <p class="section-intro">Cultured meat offers significant advantages over both conventional and even some plant-based alternatives.</p>
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Cultured Meat</th>
+          <th>Conventional Meat</th>
+          <th>Plant-Based Meat</th>
+        </tr>
+        <tr>
+          <td>Animal Impact</td>
+          <td>Slaughter-Free</td>
+          <td>High</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>Environmental Impact</td>
+          <td>Drastically Lower Land & Water Use</td>
+          <td>Very High</td>
+          <td>Low</td>
+        </tr>
+        <tr>
+          <td>Nutritional Profile</td>
+          <td>Identical to conventional meat</td>
+          <td>High in protein</td>
+          <td>Varies; often lower in protein</td>
+        </tr>
+        <tr>
+          <td>Food Safety</td>
+          <td>Produced in sterile environment, free of antibiotics</td>
+          <td>Risk of contamination</td>
+          <td>No risk of animal-borne pathogens</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="industry">
+      <h2>Industry Leaders & Innovators</h2>
+      <p class="section-intro">The alternative protein space is vibrant and growing, with companies specializing in cultured meat, plant-based products, and other novel innovations.</p>
+        <div class="innovators-grid">
+            <div class="innovator-card">
+                <div class="innovator-logo">LG</div>
+                <h3>Lab-Grown (Cultured)</h3>
+                <p>Companies like <strong>Upside Foods</strong> and <strong>Mosa Meat</strong> are pioneering the production of real meat from cells.</p>
+            </div>
+            <div class="innovator-card">
+                <div class="innovator-logo">PB</div>
+                <h3>Plant-Based</h3>
+                <p>Leaders like <strong>Beyond Meat</strong> and <strong>Impossible Foods</strong> use plant-derived ingredients to replicate conventional meat.</p>
+            </div>
+            <div class="innovator-card">
+                <div class="innovator-logo">OI</div>
+                <h3>Other Innovations</h3>
+                <p>Brands like <strong>Quorn</strong> (mycoprotein) and <strong>Meati Foods</strong> (mycelium) create unique, protein-rich foods from fungi.</p>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+        <p>A New Way to Eat | For the animals, for the planet, for a better future.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="science.html">The Science</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <p style="margin-top: 2em; font-size: 0.9em;">Made with passion by Woxsen University students.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Script for scroll animations
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+  </script>
+</body>
+</html>

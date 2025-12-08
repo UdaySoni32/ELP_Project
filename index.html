@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A New Way to Eat - Halting Biodiversity Loss</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html">A New Way to Eat</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="science.html">The Science</a>
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help</a>
+      <a href="buy_in_india.html">Buy in India</a>
+    </div>
+  </nav>
+
+  <header class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1740&q=80');">
+    <h1>Change Your Plate, Change the Planet</h1>
+    <p>Discover how choosing alternative proteins can be a powerful way to protect Earth's precious biodiversity.</p>
+    <a href="#solution" class="cta-button">Learn How</a>
+  </header>
+
+  <main class="container">
+    <section id="problem">
+      <div class="grid-2-col">
+        <div>
+          <h2>The Biodiversity Crisis is Here</h2>
+          <p>The variety of life on Earth is vanishing at an unprecedented rate. A key driver of this crisis is habitat destruction fueled by traditional agriculture. Vast forests are cleared for livestock, pushing countless species towards extinction and disrupting the delicate balance of our ecosystems.</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1542601906-8b366336425c?auto=format&fit=crop&w=800&q=60" alt="A deforested area showing the harsh impact of agriculture.">
+        </div>
+      </div>
+    </section>
+
+    <section id="solution">
+       <div class="grid-2-col">
+        <div>
+          <img src="https://images.unsplash.com/photo-1628241478211-1681b4539063?auto=format&fit=crop&w=800&q=60" alt="A delicious and vibrant plant-based meal.">
+        </div>
+        <div>
+          <h2>A Powerful, Delicious Solution</h2>
+          <p>By shifting towards alternative proteins, we can reclaim land for nature, drastically cut our water usage, and reduce pollution. Modern plant-based and cultured meats offer the flavors and textures we love without the devastating environmental cost. It's a choice that is better for us, and for our planet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact-calculator">
+      <h2>Calculate Your Impact</h2>
+      <p class="section-intro">See how small changes in your diet can lead to significant environmental savings. Adjust the slider to see the impact of replacing meat-based meals with plant-based alternatives each week.</p>
+      <div class="calculator-content">
+        <div class="slider-container">
+          <label for="meat-meals">Number of Meals to Switch Per Week: <span id="meat-meals-value">5</span></label>
+          <input type="range" id="meat-meals" min="1" max="21" value="5">
+        </div>
+        <div id="impact-results">
+          <!-- Results will be injected by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="did-you-know" style="background: var(--white); padding: 4em 2em; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        <h2>Did You Know?</h2>
+        <p class="section-intro">Here are some hard-hitting facts about the impact of our food choices.</p>
+        <div class="innovators-grid">
+            <div class="innovator-card">
+                <h3>83% of Farmland</h3>
+                <p>Is used for livestock, but it produces just 18% of our calories. A global switch to plant-based diets could free up an area of land the size of Africa.</p>
+            </div>
+            <div class="innovator-card">
+                <h3>60% of Biodiversity Loss</h3>
+                <p>Is caused by the food we eat. The meat and dairy industries are the single biggest drivers of species extinction worldwide.</p>
+            </div>
+            <div class="innovator-card">
+                <h3>2,500 Gallons of Water</h3>
+                <p>Are needed to produce just one pound of beef. In contrast, a pound of vegetables requires only about 25 gallons.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="innovators">
+      <h2>Meet the Innovators</h2>
+      <p class="section-intro">A revolution in food is underway, led by visionary companies. Explore the pioneers creating the future of meat.</p>
+      <div class="innovators-grid">
+        <div class="innovator-card">
+          <div class="innovator-logo">UF</div>
+          <h3><a href="https://www.upsidefoods.com/" target="_blank">Upside Foods</a></h3>
+          <p>Pioneers in delicious, cultured chicken and beef, made from animal cells without the farm.</p>
+        </div>
+        <div class="innovator-card">
+          <div class="innovator-logo">BM</div>
+          <h3><a href="https://www.beyondmeat.com/" target="_blank">Beyond Meat</a></h3>
+          <p>A leader in plant-based meat, offering burgers and sausages that are better for you and the planet.</p>
+        </div>
+        <div class="innovator-card">
+          <div class="innovator-logo">IF</div>
+          <h3><a href="https://impossiblefoods.com/" target="_blank">Impossible Foods</a></h3>
+          <p>Famous for its "bleeding" plant-based burger that has transformed the industry.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+        <p>A New Way to Eat | For the animals, for the planet, for a better future.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="science.html">The Science</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <p style="margin-top: 2em; font-size: 0.9em;">Made with passion by Woxsen University students.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Script for scroll animations
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Impact Calculator Script
+    const meatMealsSlider = document.getElementById('meat-meals');
+    if (meatMealsSlider) {
+        const meatMealsValue = document.getElementById('meat-meals-value');
+        const impactResults = document.getElementById('impact-results');
+
+        const calculateImpact = (meals) => {
+          // Approximate figures per switched meal (plant-based vs. beef)
+          const landSavings = (meals * 10).toFixed(1); // in square meters
+          const waterSavings = (meals * 500).toFixed(1); // in liters
+          const co2Savings = (meals * 2.5).toFixed(1); // in kg
+
+          impactResults.innerHTML = `
+            <p class="savings">By switching just ${meals} meal(s) a week, you could save approximately:</p>
+            <p><strong>Land:</strong> ${landSavings} m²</p>
+            <p><strong>Water:</strong> ${waterSavings} L</p>
+            <p><strong>CO2 Emissions:</strong> ${co2Savings} kg</p>
+          `;
+        };
+
+        // Initial calculation
+        calculateImpact(meatMealsSlider.value);
+
+        // Update on slider input
+        meatMealsSlider.addEventListener('input', (event) => {
+          const meals = event.target.value;
+          meatMealsValue.textContent = meals;
+          calculateImpact(meals);
+        });
+    }
+  </script>
+</body>
+</html>
