@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipes - A New Way to Eat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html">A New Way to Eat</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="science.html">The Science</a>
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help</a>
+      <a href="buy_in_india.html">Buy in India</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="recipes.html" class="active">Recipes</a>
+    </div>
+  </nav>
+
+  <header class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1740&q=80'); padding: 8em 2em;">
+    <h1>Delicious Plant-Based Recipes</h1>
+    <p>Explore easy and tasty ways to incorporate alternative proteins into your diet.</p>
+  </header>
+
+  <main class="container">
+    <section id="recipes">
+      <h2>Featured Recipes</h2>
+      <p class="section-intro">Eating sustainably doesn't mean sacrificing flavor! Try these simple, delicious plant-based recipes.</p>
+      <div class="innovators-grid">
+        <!-- Recipe Card 1 -->
+        <div class="innovator-card recipe-card">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=60" alt="Plant-Based Lentil Soup" class="innovator-img">
+          <h3>Hearty Lentil Soup</h3>
+          <p>A comforting and nutritious soup packed with plant-based protein and vegetables. Perfect for a quick meal.</p>
+          <a href="#" class="cta-button recipe-button">View Recipe</a>
+        </div>
+        <!-- Recipe Card 2 -->
+        <div class="innovator-card recipe-card">
+          <img src="https://images.unsplash.com/photo-1628241478211-1681b4539063?auto=format&fit=crop&w=800&q=60" alt="Spicy Tofu Scramble" class="innovator-img">
+          <h3>Spicy Tofu Scramble</h3>
+          <p>A quick and flavorful plant-based alternative to scrambled eggs. Great for breakfast or brunch.</p>
+          <a href="#" class="cta-button recipe-button">View Recipe</a>
+        </div>
+        <!-- Recipe Card 3 -->
+        <div class="innovator-card recipe-card">
+          <img src="https://images.unsplash.com/photo-1540914124281-342587941389?auto=format&fit=crop&w=800&q=60" alt="Black Bean Burgers" class="innovator-img">
+          <h3>Homemade Black Bean Burgers</h3>
+          <p>Whip up delicious and satisfying black bean burgers from scratch. A healthier twist on a classic.</p>
+          <a href="#" class="cta-button recipe-button">View Recipe</a>
+        </div>
+        <!-- Recipe Card 4 -->
+        <div class="innovator-card recipe-card">
+          <img src="https://images.unsplash.com/photo-1504547209778-e547379d63c9?auto=format&fit=crop&w=800&q=60" alt="Chickpea Curry" class="innovator-img">
+          <h3>Quick Chickpea Curry</h3>
+          <p>An aromatic and rich chickpea curry that's easy to make and bursting with Indian flavors.</p>
+          <a href="#" class="cta-button recipe-button">View Recipe</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Recipe View (Hidden by default, shown via JavaScript) -->
+    <section id="detailed-recipe" style="display: none; background: var(--white); padding: 4em 2em; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+      <h2 id="recipe-title"></h2>
+      <img id="recipe-image" src="" alt="" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--border-radius); margin-bottom: 2em;">
+      <h3>Ingredients</h3>
+      <ul id="recipe-ingredients"></ul>
+      <h3>Instructions</h3>
+      <ol id="recipe-instructions"></ol>
+      <button id="back-to-recipes" class="cta-button">Back to Recipes</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+        <p>A New Way to Eat | For the animals, for the planet, for a better future.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="science.html">The Science</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <p style="margin-top: 2em; font-size: 0.9em;">Made with passion by Woxsen University students.</p>
+    </div>
+  </footer>
+
+  <script src="recipes.js"></script>
+</body>
+</html>

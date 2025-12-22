@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Footprint Quiz - A New Way to Eat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html">A New Way to Eat</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="science.html">The Science</a>
+      <a href="about.html">About Us</a>
+      <a href="help.html">Help</a>
+      <a href="buy_in_india.html">Buy in India</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="recipes.html">Recipes</a>
+    </div>
+  </nav>
+
+  <header class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1510936111840-65e019313d56?auto=format&fit=crop&w=1740&q=80'); padding: 8em 2em;">
+    <h1>What's Your Food Footprint?</h1>
+    <p>Take our quick quiz to discover the environmental impact of your dietary choices.</p>
+  </header>
+
+  <main class="container">
+    <section id="quiz-section">
+      <div class="quiz-container">
+        <h2 id="quiz-question">Loading Quiz...</h2>
+        <div id="quiz-options" class="quiz-options-grid">
+          <!-- Quiz options will be injected here by JavaScript -->
+        </div>
+        <button id="next-button" class="cta-button">Next Question</button>
+        <div id="quiz-results" class="quiz-results" style="display: none;">
+          <h2>Your Food Footprint</h2>
+          <p id="results-text"></p>
+          <p class="section-intro">Want to learn more about reducing your impact?</p>
+          <a href="help.html" class="cta-button">Get Involved</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+        <p>A New Way to Eat | For the animals, for the planet, for a better future.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="science.html">The Science</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <p style="margin-top: 2em; font-size: 0.9em;">Made with passion by Woxsen University students.</p>
+    </div>
+  </footer>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

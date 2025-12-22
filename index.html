@@ -20,10 +20,12 @@
       <a href="about.html">About Us</a>
       <a href="help.html">Help</a>
       <a href="buy_in_india.html">Buy in India</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="recipes.html">Recipes</a>
     </div>
   </nav>
 
-  <header class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1740&q=80');">
+  <header class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/hero-home.jpg');">
     <h1>Change Your Plate, Change the Planet</h1>
     <p>Discover how choosing alternative proteins can be a powerful way to protect Earth's precious biodiversity.</p>
     <a href="#solution" class="cta-button">Learn How</a>
@@ -37,7 +39,7 @@
           <p>The variety of life on Earth is vanishing at an unprecedented rate. A key driver of this crisis is habitat destruction fueled by traditional agriculture. Vast forests are cleared for livestock, pushing countless species towards extinction and disrupting the delicate balance of our ecosystems.</p>
         </div>
         <div>
-          <img src="https://images.unsplash.com/photo-1542601906-8b366336425c?auto=format&fit=crop&w=800&q=60" alt="A deforested area showing the harsh impact of agriculture.">
+          <img src="assets/images/problem-deforestation.jpg" alt="A deforested area showing the harsh impact of agriculture.">
         </div>
       </div>
     </section>
@@ -45,7 +47,7 @@
     <section id="solution">
        <div class="grid-2-col">
         <div>
-          <img src="https://images.unsplash.com/photo-1628241478211-1681b4539063?auto=format&fit=crop&w=800&q=60" alt="A delicious and vibrant plant-based meal.">
+          <img src="assets/images/solution-plant-meal.jpg" alt="A delicious and vibrant plant-based meal.">
         </div>
         <div>
           <h2>A Powerful, Delicious Solution</h2>
@@ -54,19 +56,7 @@
       </div>
     </section>
 
-    <section id="impact-calculator">
-      <h2>Calculate Your Impact</h2>
-      <p class="section-intro">See how small changes in your diet can lead to significant environmental savings. Adjust the slider to see the impact of replacing meat-based meals with plant-based alternatives each week.</p>
-      <div class="calculator-content">
-        <div class="slider-container">
-          <label for="meat-meals">Number of Meals to Switch Per Week: <span id="meat-meals-value">5</span></label>
-          <input type="range" id="meat-meals" min="1" max="21" value="5">
-        </div>
-        <div id="impact-results">
-          <!-- Results will be injected by JavaScript -->
-        </div>
-      </div>
-    </section>
+    
 
     <section id="did-you-know" style="background: var(--white); padding: 4em 2em; border-radius: var(--border-radius); box-shadow: var(--shadow);">
         <h2>Did You Know?</h2>
@@ -87,22 +77,61 @@
         </div>
     </section>
 
+    <section id="myth-vs-fact" class="visible">
+        <h2>Myth vs. Fact</h2>
+        <p class="section-intro">Separate the truth from the fiction about alternative proteins.</p>
+        <div class="innovators-grid">
+            <div class="innovator-card myth-card">
+                <div class="front-face">
+                    <h3>Myth: It's unnatural and full of chemicals.</h3>
+                </div>
+                <div class="fact-content">
+                    <p><strong>Fact:</strong> Cultured meat is grown from animal cells in a sterile environment, reducing the need for antibiotics. Plant-based meats use common plant ingredients, often less processed than many traditional foods. Both are highly regulated.</p>
+                </div>
+            </div>
+            <div class="innovator-card myth-card">
+                <div class="front-face">
+                    <h3>Myth: It's only for vegans/vegetarians.</h3>
+                </div>
+                <div class="fact-content">
+                    <p><strong>Fact:</strong> Alternative proteins are for anyone who wants to reduce their environmental impact, improve animal welfare, or enjoy delicious, healthier options. Many meat-eaters are flexitarians and enjoy these products regularly.</p>
+                </div>
+            </div>
+            <div class="innovator-card myth-card">
+                <div class="front-face">
+                    <h3>Myth: It doesn't taste as good as real meat.</h3>
+                </div>
+                <div class="fact-content">
+                    <p><strong>Fact:</strong> Technology and culinary science have made huge advancements. Many blind taste tests show consumers can't tell the difference, and some even prefer the taste and texture of alternative protein products.</p>
+                </div>
+            </div>
+            <div class="innovator-card myth-card">
+                <div class="front-face">
+                    <h3>Myth: It's too expensive.</h3>
+                </div>
+                <div class="fact-content">
+                    <p><strong>Fact:</strong> While some products started at a higher price point due to nascent technology and smaller scale, prices are rapidly decreasing. Many plant-based options are already more affordable than their animal counterparts, especially when considering environmental costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="innovators">
       <h2>Meet the Innovators</h2>
       <p class="section-intro">A revolution in food is underway, led by visionary companies. Explore the pioneers creating the future of meat.</p>
       <div class="innovators-grid">
         <div class="innovator-card">
-          <img src="https://images.unsplash.com/photo-1540914124281-342587941389?auto=format&fit=crop&w=800&q=60" alt="A gourmet plant-based dish" class="innovator-img">
+          <img src="assets/images/innovator-upside.jpg" alt="A gourmet plant-based dish" class="innovator-img">
           <h3><a href="https://www.upsidefoods.com/" target="_blank">Upside Foods</a></h3>
           <p>Pioneers in delicious, cultured chicken and beef, made from animal cells without the farm.</p>
         </div>
         <div class="innovator-card">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=60" alt="A vibrant salad" class="innovator-img">
+          <img src="assets/images/innovator-beyond.jpg" alt="A vibrant salad" class="innovator-img">
           <h3><a href="https://www.beyondmeat.com/" target="_blank">Beyond Meat</a></h3>
           <p>A leader in plant-based meat, offering burgers and sausages that are better for you and the planet.</p>
         </div>
         <div class="innovator-card">
-          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=60" alt="A healthy food bowl" class="innovator-img">
+          <img src="assets/images/innovator-impossible.jpg" alt="A healthy food bowl" class="innovator-img">
           <h3><a href="https://impossiblefoods.com/" target="_blank">Impossible Foods</a></h3>
           <p>Famous for its "bleeding" plant-based burger that has transformed the industry.</p>
         </div>
@@ -137,36 +166,12 @@
         observer.observe(section);
     });
 
-    // Impact Calculator Script
-    const meatMealsSlider = document.getElementById('meat-meals');
-    if (meatMealsSlider) {
-        const meatMealsValue = document.getElementById('meat-meals-value');
-        const impactResults = document.getElementById('impact-results');
-
-        const calculateImpact = (meals) => {
-          // Approximate figures per switched meal (plant-based vs. beef)
-          const landSavings = (meals * 10).toFixed(1); // in square meters
-          const waterSavings = (meals * 500).toFixed(1); // in liters
-          const co2Savings = (meals * 2.5).toFixed(1); // in kg
-
-          impactResults.innerHTML = `
-            <p class="savings">By switching just ${meals} meal(s) a week, you could save approximately:</p>
-            <p><strong>Land:</strong> ${landSavings} m²</p>
-            <p><strong>Water:</strong> ${waterSavings} L</p>
-            <p><strong>CO2 Emissions:</strong> ${co2Savings} kg</p>
-          `;
-        };
-
-        // Initial calculation
-        calculateImpact(meatMealsSlider.value);
-
-        // Update on slider input
-        meatMealsSlider.addEventListener('input', (event) => {
-          const meals = event.target.value;
-          meatMealsValue.textContent = meals;
-          calculateImpact(meals);
+    // Myth vs. Fact Card Flip
+    document.querySelectorAll('.myth-card').forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
         });
-    }
+    });
   </script>
 </body>
 </html>
