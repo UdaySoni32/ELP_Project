@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Fetch recipes from JSON
-    fetch('recipes.json')
+    fetch('./recipes.json')
         .then(response => response.json())
         .then(data => {
             recipes = data; // Assign fetched data to recipes array

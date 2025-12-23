@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Fetch questions from JSON
-        fetch('quiz.json')
+        fetch('./quiz.json')
             .then(response => response.json())
             .then(data => {
                 questions = data; // Assign fetched data to questions array

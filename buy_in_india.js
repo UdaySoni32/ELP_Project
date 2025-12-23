@@ -29,6 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return filter === 'all' || product.type === filter;
         });
 
+        const productCountElement = document.getElementById('product-count');
+        if (productCountElement) {
+            productCountElement.textContent = `Showing ${filteredProducts.length} of ${products.length} products.`;
+        }
+
         if (filteredProducts.length === 0) {
             productGrid.innerHTML = '<p>No products found for this category.</p>';
             return;
@@ -48,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Fetch products from JSON
-    fetch('products.json')
+    fetch('./products.json')
         .then(response => response.json())
         .then(data => {
             products = data; // Assign fetched data to products array
