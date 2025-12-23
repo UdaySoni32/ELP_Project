@@ -570,5 +570,228 @@ ol li::before {
 .product-card .price span {
     color: var(--primary-color);
 }
-.avatar { border-radius: 50% !important; width: 150px !important; height: 150px !important; }
+/* --- Social Links in Innovator Cards --- */
+.innovator-card .social-links {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.innovator-card .social-links img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    object-fit: contain;
+    margin-bottom: 0; /* Override innovator-img margin */
+    box-shadow: none; /* Remove shadow */
+    border-radius: 0; /* Remove border-radius */
+}
+
+.innovator-card .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5em auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
 .logo-img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 1.5em; }
+
+/* --- Modal Styles (for Recipes) --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: auto;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    position: relative;
+    box-shadow: var(--shadow);
+    overflow-y: auto; /* Enable scroll for long content */
+    max-height: 90vh; /* Max height to prevent modal from going off-screen */
+    text-align: left;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    text-align: left;
+    font-size: 2.5em;
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    margin-top: 1.5em;
+    font-size: 1.8em;
+}
+
+.modal-content img.modal-recipe-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 2em;
+}
+
+.modal-content ul, .modal-content ol {
+    padding-left: 20px;
+    margin-bottom: 1.5em;
+}
+
+.modal-content ul li, .modal-content ol li {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    color: var(--dark-text);
+    line-height: 1.5;
+}
+
+.modal-content ol li::before {
+    display: none; /* Hide custom counter for modal instructions */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body.modal-open {
+    overflow: hidden; /* Prevent background scrolling when modal is open */
+}
+
+/* --- Progress Bar for Quiz --- */
+#progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 15px;
+    margin-bottom: 2em;
+    overflow: hidden;
+}
+
+#progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* --- Modal Styles (for Recipes) --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: auto;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    position: relative;
+    box-shadow: var(--shadow);
+    overflow-y: auto; /* Enable scroll for long content */
+    max-height: 90vh; /* Max height to prevent modal from going off-screen */
+    text-align: left;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    text-align: left;
+    font-size: 2.5em;
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    margin-top: 1.5em;
+    font-size: 1.8em;
+}
+
+.modal-content img.modal-recipe-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 2em;
+}
+
+.modal-content ul, .modal-content ol {
+    padding-left: 20px;
+    margin-bottom: 1.5em;
+}
+
+.modal-content ul li, .modal-content ol li {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    color: var(--dark-text);
+    line-height: 1.5;
+}
+
+.modal-content ol li::before {
+    display: none; /* Hide custom counter for modal instructions */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body.modal-open {
+    overflow: hidden; /* Prevent background scrolling when modal is open */
+}

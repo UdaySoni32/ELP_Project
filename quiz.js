@@ -2,44 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const quizContainer = document.querySelector('.quiz-container');
 
     try {
-        const questions = [
-            {
-                question: "How many meat-based meals do you typically eat per week?",
-                options: [
-                    { text: "0-2 meals", impact: 1 },
-                    { text: "3-5 meals", impact: 2 },
-                    { text: "6-10 meals", impact: 3 },
-                    { text: "10+ meals", impact: 4 }
-                ]
-            },
-            {
-                question: "When you eat meat, what type do you consume most often?",
-                options: [
-                    { text: "Poultry (chicken, turkey)", impact: 1 },
-                    { text: "Pork", impact: 2 },
-                    { text: "Beef/Lamb", impact: 3 },
-                    { text: "Fish/Seafood", impact: 2 }
-                ]
-            },
-            {
-                question: "How often do you consider plant-based alternatives?",
-                options: [
-                    { text: "Frequently (most meals)", impact: 1 },
-                    { text: "Sometimes (a few meals a week)", impact: 2 },
-                    { text: "Rarely (once a month or less)", impact: 3 },
-                    { text: "Never", impact: 4 }
-                ]
-            },
-            {
-                question: "What motivates your food choices the most?",
-                options: [
-                    { text: "Environmental impact", impact: 1 },
-                    { text: "Health benefits", impact: 1 },
-                    { text: "Taste and preference", impact: 3 },
-                    { text: "Cost", impact: 2 }
-                ]
-            }
-        ];
+        // Moved questions data to quiz.json
+        let questions = []; // Will be populated from JSON
 
         let currentQuestionIndex = 0;
         let totalImpact = 0;
@@ -49,15 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextButton = document.getElementById('next-button');
         const quizResultsElement = document.getElementById('quiz-results');
         const resultsTextElement = document.getElementById('results-text');
+        const progressBarFill = document.getElementById('progress-bar-fill');
 
-        if (!quizQuestionElement || !quizOptionsElement || !nextButton || !quizResultsElement || !resultsTextElement) {
+        if (!quizQuestionElement || !quizOptionsElement || !nextButton || !quizResultsElement || !resultsTextElement || !progressBarFill) {
             throw new Error("Quiz elements not found in the DOM.");
         }
 
+        function updateProgressBar() {
+            const progress = (currentQuestionIndex / questions.length) * 100;
+            progressBarFill.style.width = `${progress}%`;
+        }
+
         function loadQuestion() {
+            if (questions.length === 0) { // Check if questions are loaded yet
+                quizQuestionElement.textContent = "Loading Questions...";
+                return;
+            }
             const currentQuestion = questions[currentQuestionIndex];
             quizQuestionElement.textContent = currentQuestion.question;
-            quizOptionsElement.innerHTML = ''; // Clear previous options
+            quizOptionsElement.innerHTML = '';
 
             currentQuestion.options.forEach(option => {
                 const button = document.createElement('button');
@@ -69,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             nextButton.style.display = 'none';
+            updateProgressBar();
         }
 
         function selectAnswer(event) {
@@ -109,12 +84,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 resultMessage = "Your food footprint is on the higher side. Exploring more plant-based and alternative protein options can significantly reduce your environmental impact.";
             }
             resultsTextElement.textContent = resultMessage;
+            progressBarFill.style.width = '100%';
         }
 
-        loadQuestion();
+        // Fetch questions from JSON
+        fetch('quiz.json')
+            .then(response => response.json())
+            .then(data => {
+                questions = data; // Assign fetched data to questions array
+                loadQuestion(); // Load the first question once data is available
+            })
+            .catch(error => {
+                console.error('Error fetching quiz questions:', error);
+                quizContainer.innerHTML = `
+                    <h2>Oops! Something went wrong.</h2>
+                    <p>We couldn't load the quiz questions. Please try refreshing the page.</p>
+                    <p style="font-size: 0.8em; color: #666;">Error: ${error.message}</p>
+                `;
+            });
 
     } catch (error) {
-        console.error("An error occurred while loading the quiz:", error);
+        console.error("An error occurred while initializing the quiz:", error);
         if (quizContainer) {
             quizContainer.innerHTML = `
                 <h2>Oops! Something went wrong.</h2>

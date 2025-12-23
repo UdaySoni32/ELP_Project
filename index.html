@@ -151,21 +151,8 @@
     </div>
   </footer>
 
+  <script src="main.js"></script>
   <script>
-    // Script for scroll animations
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
     // Myth vs. Fact Card Flip
     document.querySelectorAll('.myth-card').forEach(card => {
         card.addEventListener('click', () => {

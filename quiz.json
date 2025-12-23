@@ -1,0 +1,38 @@
+[
+    {
+        "question": "How many meat-based meals do you typically eat per week?",
+        "options": [
+            { "text": "0-2 meals", "impact": 1 },
+            { "text": "3-5 meals", "impact": 2 },
+            { "text": "6-10 meals", "impact": 3 },
+            { "text": "10+ meals", "impact": 4 }
+        ]
+    },
+    {
+        "question": "When you eat meat, what type do you consume most often?",
+        "options": [
+            { "text": "Poultry (chicken, turkey)", "impact": 1 },
+            { "text": "Pork", "impact": 2 },
+            { "text": "Beef/Lamb", "impact": 3 },
+            { "text": "Fish/Seafood", "impact": 2 }
+        ]
+    },
+    {
+        "question": "How often do you consider plant-based alternatives?",
+        "options": [
+            { "text": "Frequently (most meals)", "impact": 1 },
+            { "text": "Sometimes (a few meals a week)", "impact": 2 },
+            { "text": "Rarely (once a month or less)", "impact": 3 },
+            { "text": "Never", "impact": 4 }
+        ]
+    },
+    {
+        "question": "What motivates your food choices the most?",
+        "options": [
+            { "text": "Environmental impact", "impact": 1 },
+            { "text": "Health benefits", "impact": 1 },
+            { "text": "Taste and preference", "impact": 3 },
+            { "text": "Cost", "impact": 2 }
+        ]
+    }
+]
