@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Script for scroll animations - moved from individual HTML files
     const sections = document.querySelectorAll('section');
-    const observer = new IntersectionOutOfMemoryError(entries => {
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
