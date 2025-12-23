@@ -227,69 +227,7 @@ h2 {
 }
 
 
-/* --- Myth vs. Fact Section --- */
-.myth-card {
-    cursor: pointer;
-    perspective: 1000px; /* For 3D flip effect */
-    transform-style: preserve-3d;
-    position: relative;
-    padding: 0; /* Remove padding from innovator-card to apply to inner faces */
-    border: none; /* Remove border from innovator-card */
-    box-shadow: none; /* Remove shadow from innovator-card */
-    transition: transform 0.6s;
-    height: 250px; /* Fixed height for consistent cards */
-}
 
-.myth-card:hover {
-    transform: translateY(0); /* Override translateY from innovator-card:hover */
-    box-shadow: none; /* Override shadow from innovator-card:hover */
-}
-
-.myth-card .front-face,
-.myth-card .fact-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2.5em;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    background: var(--white);
-    transition: transform 0.6s;
-}
-
-.myth-card .front-face {
-    transform: rotateY(0deg);
-}
-
-.myth-card .fact-content {
-    transform: rotateY(180deg);
-    background: var(--primary-color);
-    color: var(--light-text);
-    text-align: center;
-}
-
-.myth-card.flipped .front-face {
-    transform: rotateY(-180deg);
-}
-
-.myth-card.flipped .fact-content {
-    transform: rotateY(0deg);
-}
-
-.myth-card .front-face h3 {
-    margin-bottom: 0;
-    color: var(--primary-color);
-}
-
-.myth-card .fact-content p {
-    font-size: 1.1em;
-    line-height: 1.5;
-}
 
 /* --- Testimonials Section --- */
 .testimonial-card {
@@ -795,3 +733,71 @@ body.modal-open {
 body.modal-open {
     overflow: hidden; /* Prevent background scrolling when modal is open */
 }
+
+/* --- Myth vs. Fact Section (Accordion Style) --- */
+.myth-fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5em;
+    margin-top: 3em;
+}
+
+.myth-fact-item details {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    overflow: hidden; /* Ensures border-radius applies to content */
+}
+
+.myth-fact-item details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.myth-fact-item summary {
+    display: block; /* Important for custom styling */
+    padding: 1.5em 2em;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    cursor: pointer;
+    position: relative;
+    outline: none; /* Remove default focus outline */
+    -webkit-touch-callout: none; /* Disable callout on iOS Safari */
+    -webkit-user-select: none; /* Disable text selection for consistency */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.myth-fact-item summary::marker,
+.myth-fact-item summary::-webkit-details-marker {
+    display: none; /* Hide default marker */
+}
+
+.myth-fact-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    line-height: 1;
+    transition: transform var(--transition-speed);
+    color: var(--secondary-color);
+}
+
+.myth-fact-item details[open] summary::after {
+    content: '-';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.myth-fact-item details p {
+    padding: 0 2em 1.5em 2em;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
